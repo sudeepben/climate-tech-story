@@ -28,6 +28,10 @@ body {
   overflow: hidden;
 }
 
+body:not(.show-cues) .cue {
+  display: none;
+}
+
 button {
   font: inherit;
 }
@@ -42,14 +46,14 @@ button {
 .slide {
   --accent: var(--green);
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(14rem, 18rem);
+  grid-template-columns: minmax(0, 1fr);
   grid-template-rows: auto auto auto 1fr;
-  gap: 1.1rem 4rem;
+  gap: clamp(0.65rem, 1.35vh, 1rem);
   height: 100%;
   left: 0;
   opacity: 0;
-  padding: clamp(2.25rem, 5.5vh, 4.3rem) var(--safe-x)
-    clamp(4.5rem, 8vh, 6rem);
+  padding: clamp(2rem, 5vh, 3.6rem) var(--safe-x)
+    clamp(3.6rem, 6vh, 4.6rem);
   pointer-events: none;
   position: absolute;
   top: 0;
@@ -88,6 +92,7 @@ button {
   line-height: 1.1;
   padding-top: 0.9rem;
   position: relative;
+  width: max-content;
 }
 
 .slide-kicker::after {
@@ -107,21 +112,21 @@ h2 {
   grid-column: 1 / 2;
   letter-spacing: 0;
   line-height: 1.06;
-  margin: clamp(1.25rem, 3vh, 2.4rem) 0 0;
-  max-width: 15ch;
+  margin: clamp(1rem, 2.2vh, 1.7rem) 0 0;
+  max-width: 21ch;
 }
 
 h1 {
-  font-size: clamp(2.6rem, 6.4vw, 5rem);
+  font-size: clamp(2.45rem, 5.2vw, 4.35rem);
 }
 
 h2 {
-  font-size: clamp(2.15rem, 4.6vw, 4.1rem);
+  font-size: clamp(2rem, 3.7vw, 3.35rem);
 }
 
 .lead {
   color: var(--muted);
-  font-size: clamp(1.2rem, 2.2vw, 1.75rem);
+  font-size: clamp(1.08rem, 1.75vw, 1.45rem);
   grid-column: 1 / 2;
   line-height: 1.25;
   margin: 0;
@@ -130,7 +135,7 @@ h2 {
 
 .statement {
   color: var(--accent);
-  font-size: clamp(2rem, 4vw, 3.4rem);
+  font-size: clamp(1.8rem, 3.5vw, 3rem);
   font-weight: 800;
   grid-column: 1 / 2;
   line-height: 1.05;
@@ -145,16 +150,16 @@ h2 {
 
 ul {
   display: grid;
-  gap: clamp(0.75rem, 1.7vh, 1.15rem);
+  gap: clamp(0.55rem, 1.25vh, 0.9rem);
   grid-column: 1 / 2;
   list-style: none;
   margin: clamp(0.65rem, 1.6vh, 1.2rem) 0 0;
-  max-width: 56rem;
+  max-width: min(76vw, 66rem);
   padding: 0;
 }
 
 li {
-  font-size: clamp(1.03rem, 1.65vw, 1.55rem);
+  font-size: clamp(0.98rem, 1.36vw, 1.28rem);
   line-height: 1.26;
   padding-left: 2.2rem;
   position: relative;
@@ -177,8 +182,8 @@ li::before {
   color: var(--muted);
   display: grid;
   gap: 0.75rem;
-  grid-column: 2 / 3;
-  grid-row: 2 / 5;
+  grid-column: 1 / 2;
+  grid-row: 4 / 5;
   line-height: 1.34;
   margin-bottom: clamp(1rem, 10vh, 5.5rem);
   max-width: 18rem;
@@ -219,13 +224,7 @@ body.hide-cues .cue {
 }
 
 .section-number {
-  color: color-mix(in srgb, var(--accent) 13%, var(--bg));
-  font-size: clamp(4.5rem, 10vw, 7.5rem);
-  font-weight: 900;
-  grid-column: 2 / 3;
-  grid-row: 1 / 3;
-  justify-self: end;
-  line-height: 0.8;
+  display: none;
 }
 
 .fit-grid {
@@ -234,7 +233,7 @@ body.hide-cues .cue {
   grid-column: 1 / 2;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   margin-top: 0.6rem;
-  max-width: 58rem;
+  max-width: min(76vw, 62rem);
 }
 
 .fit-grid article {
@@ -257,7 +256,7 @@ body.hide-cues .cue {
 }
 
 .closing h2 {
-  font-size: clamp(4rem, 10vw, 9rem);
+  font-size: clamp(4rem, 9vw, 8rem);
 }
 
 .controls {
@@ -268,10 +267,10 @@ body.hide-cues .cue {
   box-shadow: 0 14px 40px rgb(23 33 43 / 0.08);
   display: flex;
   gap: 0.75rem;
-  right: 1.05rem;
+  right: 1rem;
   padding: 0.5rem 0.65rem;
   position: fixed;
-  top: 1.05rem;
+  top: 1rem;
   z-index: 20;
 }
 

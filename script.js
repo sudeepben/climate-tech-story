@@ -35,7 +35,7 @@ function go(delta) {
 prevBtn.addEventListener("click", () => go(-1));
 nextBtn.addEventListener("click", () => go(1));
 notesBtn.addEventListener("click", () => {
-  document.body.classList.toggle("hide-cues");
+  document.body.classList.toggle("show-cues");
 });
 
 document.addEventListener("keydown", (event) => {
@@ -48,7 +48,7 @@ document.addEventListener("keydown", (event) => {
     go(-1);
   }
   if (event.key.toLowerCase() === "n") {
-    document.body.classList.toggle("hide-cues");
+    document.body.classList.toggle("show-cues");
   }
   if (event.key.toLowerCase() === "f" && document.fullscreenEnabled) {
     if (document.fullscreenElement) document.exitFullscreen();
