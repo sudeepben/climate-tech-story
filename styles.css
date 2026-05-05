@@ -145,6 +145,75 @@ h2 {
   margin-top: 1rem;
 }
 
+.intro-profile {
+  grid-template-columns: minmax(0, 0.92fr) minmax(15rem, 0.42fr);
+  column-gap: clamp(1.8rem, 4vw, 4rem);
+}
+
+.intro-profile .slide-kicker,
+.intro-profile h1,
+.intro-profile .lead,
+.intro-profile .intro-summary,
+.intro-profile .cue {
+  grid-column: 1 / 2;
+}
+
+.intro-profile h1 {
+  max-width: 12ch;
+}
+
+.intro-profile .lead {
+  color: var(--accent);
+  font-weight: 800;
+  max-width: 36ch;
+}
+
+.intro-summary {
+  display: grid;
+  gap: clamp(0.65rem, 1.25vh, 0.95rem);
+  margin-top: clamp(0.35rem, 1vh, 0.7rem);
+  max-width: 48rem;
+}
+
+.intro-summary div {
+  border-left: 4px solid color-mix(in srgb, var(--accent) 58%, transparent);
+  display: grid;
+  gap: 0.18rem;
+  padding-left: 1rem;
+}
+
+.intro-summary strong {
+  color: var(--ink);
+  font-size: clamp(0.98rem, 1.18vw, 1.12rem);
+}
+
+.intro-summary span {
+  color: var(--muted);
+  font-size: clamp(0.92rem, 1.08vw, 1.04rem);
+  line-height: 1.35;
+}
+
+.intro-photo {
+  align-self: center;
+  border: 1px solid color-mix(in srgb, var(--accent) 24%, var(--line));
+  border-radius: 0.85rem;
+  box-shadow: 0 22px 50px rgb(23 33 43 / 0.14);
+  grid-column: 2 / 3;
+  grid-row: 2 / 6;
+  margin: 0;
+  max-width: 20rem;
+  overflow: hidden;
+  width: 100%;
+}
+
+.intro-photo img {
+  aspect-ratio: 3 / 4;
+  display: block;
+  height: auto;
+  object-fit: cover;
+  width: 100%;
+}
+
 ul {
   align-content: start;
   display: grid;
@@ -583,11 +652,25 @@ body.hide-cues .cue {
     grid-template-columns: 1fr;
   }
 
+  .intro-profile {
+    grid-template-columns: 1fr;
+  }
+
+  .intro-profile h1 {
+    max-width: 13ch;
+  }
+
   .team-photo-slide .slide-kicker,
   .team-photo-slide h2,
   .team-photo-slide .lead,
   .team-photo-slide ul,
   .team-photo-slide .cue,
+  .intro-profile .slide-kicker,
+  .intro-profile h1,
+  .intro-profile .lead,
+  .intro-profile .intro-summary,
+  .intro-profile .cue,
+  .intro-photo,
   .topic-visual-slide .slide-kicker,
   .topic-visual-slide h2,
   .topic-visual-slide ul,
@@ -595,6 +678,11 @@ body.hide-cues .cue {
   .topic-visual,
   .slide-photo {
     grid-column: 1 / 2;
+  }
+
+  .intro-photo {
+    grid-row: auto;
+    max-width: 14rem;
   }
 
   .topic-visual {
