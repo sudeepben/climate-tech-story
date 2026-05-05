@@ -308,6 +308,25 @@ body.hide-cues .cue {
   width: 100%;
 }
 
+.topic-image {
+  background: #ffffff;
+  margin: 0;
+}
+
+.topic-image img {
+  display: block;
+  height: auto;
+  max-height: 24rem;
+  object-fit: contain;
+  padding: clamp(0.9rem, 1.6vw, 1.4rem);
+  width: 100%;
+}
+
+.wide-image img {
+  max-height: 22rem;
+  padding: 0;
+}
+
 .bcv-mark {
   align-content: center;
   background: #ffffff;
