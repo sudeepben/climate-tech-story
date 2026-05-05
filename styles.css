@@ -284,6 +284,96 @@ body.hide-cues .cue {
   width: 100%;
 }
 
+.topic-visual-slide {
+  grid-template-columns: minmax(0, 0.92fr) minmax(17rem, 0.58fr);
+  column-gap: clamp(2rem, 5vw, 5rem);
+}
+
+.topic-visual-slide .slide-kicker,
+.topic-visual-slide h2,
+.topic-visual-slide ul,
+.topic-visual-slide .cue {
+  grid-column: 1 / 2;
+}
+
+.topic-visual {
+  align-self: center;
+  border: 1px solid color-mix(in srgb, var(--accent) 24%, var(--line));
+  border-radius: 0.85rem;
+  box-shadow: 0 22px 50px rgb(23 33 43 / 0.1);
+  grid-column: 2 / 3;
+  grid-row: 2 / 5;
+  max-width: 31rem;
+  overflow: hidden;
+  width: 100%;
+}
+
+.bcv-mark {
+  align-content: center;
+  background: #ffffff;
+  color: #17262b;
+  display: grid;
+  gap: 1rem;
+  min-height: 21rem;
+  padding: clamp(1.4rem, 2.3vw, 2rem);
+  text-transform: uppercase;
+}
+
+.bcv-mark strong {
+  font-size: clamp(2.2rem, 3.4vw, 3.4rem);
+  line-height: 0.92;
+}
+
+.bcv-mark span {
+  border-top: 3px solid #17262b;
+  color: #aa9052;
+  font-size: clamp(0.78rem, 1vw, 0.96rem);
+  font-weight: 800;
+  padding-top: 0.9rem;
+}
+
+.mountain-mark {
+  background: #17262b;
+  clip-path: polygon(0 75%, 23% 23%, 40% 48%, 54% 15%, 100% 75%, 100% 100%, 0 100%);
+  height: 6rem;
+  width: 7.8rem;
+}
+
+.amply-card {
+  background:
+    linear-gradient(180deg, rgb(255 255 255 / 0.94), rgb(255 255 255 / 0.94)),
+    radial-gradient(circle at 18% 10%, #6fd2c8, transparent 34%),
+    radial-gradient(circle at 80% 0%, #4f88bd, transparent 38%),
+    radial-gradient(circle at 34% 72%, #d7cfa6, transparent 34%);
+  color: #696f78;
+  display: grid;
+  gap: 1.2rem;
+  min-height: 21rem;
+  padding: clamp(1.4rem, 2.6vw, 2.4rem);
+}
+
+.amply-card span {
+  font-size: clamp(1rem, 1.3vw, 1.2rem);
+  font-weight: 700;
+  max-width: 18rem;
+}
+
+.amply-card strong {
+  align-self: center;
+  color: #7777ff;
+  font-size: clamp(3.4rem, 6vw, 5.8rem);
+  font-weight: 500;
+  justify-self: end;
+  letter-spacing: 0;
+  line-height: 0.9;
+}
+
+.amply-card small {
+  font-size: clamp(0.9rem, 1.1vw, 1.05rem);
+  font-weight: 700;
+  max-width: 20rem;
+}
+
 .mini-visual {
   align-items: center;
   display: flex;
@@ -470,13 +560,27 @@ body.hide-cues .cue {
     grid-template-columns: 1fr;
   }
 
+  .topic-visual-slide {
+    grid-template-columns: 1fr;
+  }
+
   .team-photo-slide .slide-kicker,
   .team-photo-slide h2,
   .team-photo-slide .lead,
   .team-photo-slide ul,
   .team-photo-slide .cue,
+  .topic-visual-slide .slide-kicker,
+  .topic-visual-slide h2,
+  .topic-visual-slide ul,
+  .topic-visual-slide .cue,
+  .topic-visual,
   .slide-photo {
     grid-column: 1 / 2;
+  }
+
+  .topic-visual {
+    grid-row: auto;
+    max-width: 24rem;
   }
 
   .slide-photo {
