@@ -284,6 +284,42 @@ body.hide-cues .cue {
   width: 100%;
 }
 
+.mini-visual {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.15rem;
+  grid-column: 1 / 2;
+  margin-top: clamp(0.65rem, 1.4vh, 1.2rem);
+  max-width: min(72vw, 56rem);
+}
+
+.mini-visual span {
+  border: 1px solid color-mix(in srgb, var(--accent) 36%, var(--line));
+  border-radius: 999px;
+  color: var(--accent);
+  font-size: clamp(0.88rem, 1.1vw, 1.02rem);
+  font-weight: 800;
+  padding: 0.52rem 0.86rem;
+  position: relative;
+}
+
+.mini-visual span + span::before {
+  color: color-mix(in srgb, var(--accent) 68%, var(--muted));
+  content: "->";
+  font-weight: 700;
+  left: -0.92rem;
+  position: absolute;
+}
+
+.kpi-strip span {
+  border-radius: 0.5rem;
+}
+
+.decision-flow span:last-child {
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+}
+
 .section-number {
   display: none;
 }
