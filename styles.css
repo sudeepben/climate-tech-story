@@ -236,6 +236,52 @@ h2 {
   padding: clamp(1rem, 1.7vw, 1.35rem);
 }
 
+.balanced-slide {
+  align-content: center;
+}
+
+.story-focus-slide {
+  grid-template-columns: minmax(0, 0.82fr) minmax(18rem, 0.58fr);
+  column-gap: clamp(2.2rem, 5vw, 5.4rem);
+}
+
+.story-focus-slide .slide-kicker,
+.story-focus-slide h2,
+.story-focus-slide .nested-points,
+.story-focus-slide .cue {
+  grid-column: 1 / 2;
+}
+
+.story-focus-slide .nested-points {
+  background: color-mix(in srgb, var(--accent) 5%, white);
+  border: 1px solid color-mix(in srgb, var(--accent) 20%, var(--line));
+  border-radius: 0.85rem;
+  box-shadow: 0 18px 44px rgb(23 33 43 / 0.06);
+  max-width: 38rem;
+  padding: clamp(1.1rem, 2vw, 1.55rem);
+}
+
+.story-lens {
+  align-self: center;
+  background: color-mix(in srgb, var(--accent) 8%, white);
+  border: 1px solid color-mix(in srgb, var(--accent) 28%, var(--line));
+  border-left: 5px solid color-mix(in srgb, var(--accent) 72%, transparent);
+  border-radius: 0.85rem;
+  box-shadow: 0 18px 44px rgb(23 33 43 / 0.08);
+  color: color-mix(in srgb, var(--accent) 84%, var(--ink));
+  display: grid;
+  font-size: clamp(1.22rem, 1.8vw, 1.72rem);
+  font-weight: 800;
+  grid-column: 2 / 3;
+  grid-row: 2 / 5;
+  line-height: 1.28;
+  margin: 0;
+  max-width: 29rem;
+  min-height: 14rem;
+  padding: clamp(1.1rem, 2vw, 1.55rem);
+  place-content: center;
+}
+
 .data-focus-slide {
   grid-template-columns: minmax(0, 0.85fr) minmax(18rem, 0.55fr);
   column-gap: clamp(2.2rem, 5vw, 5.5rem);
@@ -703,6 +749,10 @@ body.hide-cues .cue {
     grid-template-columns: 1fr;
   }
 
+  .story-focus-slide {
+    grid-template-columns: 1fr;
+  }
+
   .intro-profile {
     grid-template-columns: 1fr;
   }
@@ -728,6 +778,11 @@ body.hide-cues .cue {
   .data-focus-slide ul,
   .data-focus-slide .cue,
   .data-focus-slide .analysis-lens,
+  .story-focus-slide .slide-kicker,
+  .story-focus-slide h2,
+  .story-focus-slide .nested-points,
+  .story-focus-slide .cue,
+  .story-lens,
   .topic-visual-slide .slide-kicker,
   .topic-visual-slide h2,
   .topic-visual-slide ul,
@@ -743,6 +798,12 @@ body.hide-cues .cue {
   }
 
   .data-focus-slide .analysis-lens {
+    grid-row: auto;
+    max-width: 100%;
+    min-height: auto;
+  }
+
+  .story-lens {
     grid-row: auto;
     max-width: 100%;
     min-height: auto;
