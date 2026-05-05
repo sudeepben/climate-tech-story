@@ -57,17 +57,14 @@ button {
   pointer-events: none;
   position: absolute;
   top: 0;
-  transform: translateX(24px);
-  transition:
-    opacity 280ms ease,
-    transform 280ms ease;
+  visibility: hidden;
   width: 100%;
 }
 
 .slide.active {
   opacity: 1;
   pointer-events: auto;
-  transform: translateX(0);
+  visibility: visible;
 }
 
 .slide[data-accent="green"] {
